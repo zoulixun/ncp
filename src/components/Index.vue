@@ -11,11 +11,11 @@ export default {
   name: 'Index',
   data () {
     return {
-      certainlyAmount:[],
-      uncertainlyAmount:[],
-      seriousAmount:[],
-      deadAmount:[],
-      cureAmount:[]
+      certainlyAmount:[1287,1975,2744,4515,5974,7711,9692,11791,14380,17205,20438,24324,28018,31161,31774],
+      uncertainlyAmount:[1965,2684,5794,6973,9239,12167,15238,17988,19544,21558,23214,23260,24702,26359,27657],
+      seriousAmount:[237,324,461,976,1239,1370,1527,1795,2110,2296,2788,3219,3859,4821,6101],
+      deadAmount:[41,56,80,106,132,170,213,259,304,361,425,490,563,636,722],
+      cureAmount:[38,49,51,60,103,124,171,243,328,475,632,892,1153,1540,2050]
     }
   },
   mounted(){
@@ -127,7 +127,7 @@ export default {
               tooltip: {
                   show: false
               },
-              data: [1287,1975,2744,4515,5974,7711,9692,11791,14380,17205,20438,24324,28018,31161,31774]
+              data: this.certainlyAmount
           }, {
               name: '疑似病例',
               type: 'line',
@@ -147,7 +147,7 @@ export default {
                     color: "#cccccc",
                   }
               },
-              data: [1965,2684,5794,6973,9239,12167,15238,17988,19544,21558,23214,23260,24702,26359,27657]
+              data: this.uncertainlyAmount
           },
           {
               name: '重症病例',
@@ -172,7 +172,7 @@ export default {
               tooltip: {
                   show: false
               },
-              data: [237,324,461,976,1239,1370,1527,1795,2110,2296,2788,3219,3859,4821,6101]
+              data: this.seriousAmount
           }, 
           {
               name: '死亡',
@@ -197,7 +197,7 @@ export default {
               tooltip: {
                   show: false
               },
-              data: [41,56,80,106,132,170,213,259,304,361,425,490,563,636,722]
+              data: this.deadAmount
           }, 
           {
               name: '治愈（出院）',
@@ -222,7 +222,7 @@ export default {
               tooltip: {
                   show: false
               },
-              data: [38,49,51,60,103,124,171,243,328,475,632,892,1153,1540,2050]
+              data: this.cureAmount
           }, ]
       };
       myChart.setOption(option);
